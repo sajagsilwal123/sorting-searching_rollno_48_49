@@ -1,20 +1,10 @@
 #include<iostream>
+#include"insertion.cpp"
 using namespace std;
-#define MAX_SIZE 7
+#define MAX_SIZE 5
 
 int binarySearch(int targ, int list[]);
 
-int main(){
-	int a[7]={1,2,8,9,10,21,98};
-	int target,ret;
-	cout<<"Enter the data you want to search \n";
-	cin>>target;
-	ret = binarySearch(target, a);
-	if(ret==-1)
-		cout<<target<<" Found! ";
-	else
-		cout<<target<<" not Found!";
-}
 
 int binarySearch(int targ, int list[]){
 	int min, max, mid;
@@ -37,3 +27,25 @@ int binarySearch(int targ, int list[]){
 	}
 	return -1;
 }
+
+
+int main(){
+	//sameer's portion
+	
+		int arr[5] = {7,5,9,2,10};
+	insertionSort(arr);
+	for(int i=0 ;i<5 ;i++){
+			cout<<arr[i]<<endl;
+		
+		int target,ret;
+		cout<<"Enter the data you want to search \n";
+		cin>>target;
+		ret = binarySearch(target, arr);
+		if(ret==-1)
+			cout<<target<<" not Found! ";
+		else
+			cout<<target<<" Found!";
+	}
+}
+
+

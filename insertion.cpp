@@ -14,11 +14,4 @@ void insertionSort(int arr[]){
 		arr[i+1] = key;
 	}
 }
-int main(){
 
-	int arr[] = {7,5,9,2,10};
-	insertionSort(arr);
-	for(int i=0 ;i<5 ;i++){
-		cout<<arr[i]<<endl;
-	}
-}
