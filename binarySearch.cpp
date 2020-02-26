@@ -10,10 +10,10 @@ int main(){
 	cout<<"Enter the data you want to search \n";
 	cin>>target;
 	ret = binarySearch(target, a);
-	if(ret==1)
+	if(ret==-1)
 		cout<<target<<" Found! ";
 	else
-		cout<<target<<" Not found!";
+		cout<<target<<" not Found!";
 }
 
 int binarySearch(int targ, int list[]){
@@ -23,13 +23,17 @@ int binarySearch(int targ, int list[]){
 	while(min<MAX_SIZE  && max>=0){
 		mid = (min + max)/2;
 		if(list[mid]==targ){
-			return 1;
+			return mid;
 			break;
 		}			
-		else if (targ<list[mid])	
+		if (targ<list[mid])	
+		{
 			max = mid -1;
-		else if (targ>list[mid])
-			min = mid +	1;	 			 	
+		}
+		else 
+		{
+			min = mid +	1;
+		}				 			 	
 	}
-		return -1;
+	return -1;
 }
