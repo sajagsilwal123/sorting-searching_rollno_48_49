@@ -18,9 +18,9 @@ void merge(int arr[], int l, int m, int r)
         R[j] = arr[m + 1+ j];
 
     /* Merge the temp arrays back into arr[l..r]*/
-    i = 0; // Initial index of first subarray
-    j = 0; // Initial index of second subarray
-    k = l; // Initial index of merged subarray
+    i = 0; // Initial index of first sub-array
+    j = 0; // Initial index of second sub-array
+    k = l; // Initial index of merged sub-array
     while (i < n1 && j < n2)
     {
         if (L[i] <= R[j])
