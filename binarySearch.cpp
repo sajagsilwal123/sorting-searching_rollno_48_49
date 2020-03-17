@@ -3,49 +3,58 @@
 using namespace std;
 #define MAX_SIZE 5
 
-int binarySearch(int targ, int list[]);
+void binarySearch(int a[], int target);
 
 
-int binarySearch(int targ, int list[]){
-	int min, max, mid;
-	min = 0 ;
-	max = MAX_SIZE - 1;
-	while(min<MAX_SIZE  && max>=0){
-		mid = (min + max)/2;
-		if(list[mid]==targ){
-			return mid;
-			break;
-		}			
-		if (targ<list[mid])	
+void binarySearch(int a[], int target)
+{
+	int n = 20;
+	int mid,max,min;
+	max=n-1;
+	min=0;
+	
+	int temp;
+	
+	while(max>=min)
+	{
+		mid = (max+min)/2;
+		
+		if(target==a[mid])
 		{
-			max = mid -1;
+			temp = 1;
+			break;
 		}
+		
+		else if(target>a[mid])
+		{
+			min = mid+1;
+		}
+				
+		
 		else 
 		{
-			min = mid +	1;
-		}				 			 	
+			max=mid-1;
+		}
 	}
-	return -1;
+	
+	if(temp==1)
+		cout<<target<<" FOUND!";
+	else 
+		cout<<target<<" NOT FOUND!";
 }
 
 
 int main(){
-	//sameer's portion
 	
-		int arr[5] = {7,5,9,2,10};
+		int arr[20] = {7,5,9,2,10,900,877,45,23,123,321,345,0,1234,3,11,22,33,10,11};
 	insertionSort(arr);
-	for(int i=0 ;i<5 ;i++){
+	/*for(int i=0 ;i<20 ;i++){
 			cout<<arr[i]<<endl;
-		
+		}*/
 		int target,ret;
 		cout<<"Enter the data you want to search \n";
 		cin>>target;
-		ret = binarySearch(target, arr);
-		if(ret==-1)
-			cout<<target<<" not Found! ";
-		else
-			cout<<target<<" Found!";
-	}
+		binarySearch(arr, target);
 }
 
 
